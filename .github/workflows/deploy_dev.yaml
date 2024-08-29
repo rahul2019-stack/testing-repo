@@ -6,10 +6,9 @@ on:
       - main
 
 env:
-  env:
-    PROJECT_ID: rahul-dev-433809
-    GCS_BUCKET_NAME: function-zip-rahul
-    CF_SA: cf-dev@rahul-dev-433809.iam.gserviceaccount.com
+  PROJECT_ID: rahul-dev-433809
+  GCS_BUCKET_NAME: function-zip-rahul
+  CF_SA: cf-dev@rahul-dev-433809.iam.gserviceaccount.com
 
 jobs:
   CI:
@@ -53,7 +52,7 @@ jobs:
     - name: Authorize GCP
       uses: 'google-github-actions/auth@v2'
       with:
-        credentials_json:  ${{ secrets.DEV_GCP_CREDENTIALS_JSON }}
+        credentials_json:  ${{ secrets.GCP_DEV_SECRET }}
     
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v2
